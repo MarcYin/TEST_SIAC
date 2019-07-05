@@ -5,7 +5,7 @@
 // Github: https://github.com/MarcYin/SIAC
 // DOI: https://eartharxiv.org/ps957/
 // LICENSE: GNU GENERAL PUBLIC LICENSE V3
-var s2_cloud = require('./S2_cloud')
+//var s2_cloud = require('./S2_cloud')
 var Sen2Cloud = require('./Sen2Cloud')
 var inverse_6S_AOT = require('./Inverse_6S_AOT_brdf')
 var inverse_S2_TCWV = require('./Inverse_S2_TCWV')
@@ -14,10 +14,9 @@ var interp_mcd43a1 = require('./interp_MCD43A1')
 var tnn = require('./Two_NN')
 var s2b_ac = require('./S2B_AC')
 var mcd43_names  = kernel.mcd43_names
-var get_cloud    = s2_cloud.get_cloud
-var common_bands = s2_cloud.common_bands
-var s2_bands     = s2_cloud.s2_bands
-var l8_bands     = s2_cloud.l8_bands
+var s2_bands = ['B2', 'B3', 'B4', 'B8', 'B11', 'B12', 'B10', 'B8A', 'B7']
+var l8_bands = ['B2', 'B3', 'B4', 'B5', 'B6',  'B7',  'B9',  'B10', 'B8']
+var common_bands = ['BLUE', 'GREEN', 'RED', 'NIR', 'SWIR1', 'SWIR2', 'CIRRUS', 'EB1', 'EB2'] 
 
 var get_boa = function(image){
   image     = ee.Image(image)
